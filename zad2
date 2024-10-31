@@ -1,0 +1,42 @@
+def create_group():
+    group = []
+    num_students = int(input("Введите количество студентов в группе: "))
+
+    for _ in range(num_students):
+        student = {}
+        student["Фамилия и имя"] = input("Введите фамилию и имя студента: ")
+        student["Дата рождения"] = input("Введите дату рождения студента (гггг-мм-дд): ")
+        
+        record_book = []
+        num_subjects = int(input("Введите количество предметов в зачетке студента (от 3 до 5): "))
+        for _ in range(num_subjects):
+            subject = {}
+            subject["Предмет"] = input("Введите предмет: ")
+            subject["Дата экзамена"] = input("Введите дату экзамена (гггг-мм-дд): ")
+            subject["ФИО преподавателя"] = input("Введите ФИО преподавателя: ")
+            subject["Оценка"] = int(input("Введите оценку по предмету: "))
+            record_book.append(subject)
+        
+        student["Зачетка"] = record_book
+        group.append(student)
+    
+    return group
+
+def best_student(group):
+    best_grade = 0
+    best_student = {}
+    
+    for student in group:
+        total_grade = sum(subject["Оценка"] for subject in student["Зачетка"])
+        if total_grade > best_grade:
+            best_grade = total_grade
+            best_student = student
+    
+    return best_student
+
+group = create_group()
+best_student = best_student(group)
+
+print(f"Студент с лучшей успеваемостью:\n{best_student['Фамилия и имя']}")
+for subject in best_student["Зачетка"]:
+    print(f"Предмет: {subject['Предмет']}, Оценка: {subject['Оценка']}")
