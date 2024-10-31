@@ -1,0 +1,39 @@
+#include <iostream>
+
+class CurrencyConverter {
+public:
+    // Конструктор, принимающий курс обмена
+    CurrencyConverter(double exchangeRate) : exchangeRate(exchangeRate) {}
+
+    // Функция для перевода рублей в доллары
+    double rublesToDollars(double rubles) {
+        return rubles / exchangeRate;
+    }
+
+    // Функция для перевода долларов в рубли
+    double dollarsToRubles(double dollars) {
+        return dollars * exchangeRate;
+    }
+
+private:
+    double exchangeRate; // Курс обмена рублей к долларам
+};
+
+int main() {
+    double exchangeRate;
+    std::cout << "Введите курс обмена (рубли за доллар): ";
+    std::cin >> exchangeRate;
+
+    CurrencyConverter converter(exchangeRate);
+
+    double rubles, dollars;
+    std::cout << "Введите сумму в рублях: ";
+    std::cin >> rubles;
+    std::cout << rubles << " рублей = " << converter.rublesToDollars(rubles) << " долларов." << std::endl;
+
+    std::cout << "Введите сумму в долларах: ";
+    std::cin >> dollars;
+    std::cout << dollars << " долларов = " << converter.dollarsToRubles(dollars) << " рублей." << std::endl;
+
+    return 0;
+}
