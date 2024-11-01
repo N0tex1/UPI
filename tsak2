@@ -4,8 +4,8 @@ def create_group():
 
     for _ in range(num_students):
         student = {}
-        student["Фамилия и имя"] = input("Введите фамилию и имя студента: ")
-        student["Дата рождения"] = input("Введите дату рождения студента (гггг-мм-дд): ")
+        student["Фамилия и имя"] = input
+        student["Дата рождения"] = input
         
         record_book = []
         num_subjects = int(input("Введите количество предметов в зачетке студента (от 3 до 5): "))
