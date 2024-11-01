@@ -2,15 +2,12 @@
 
 class CurrencyConverter {
 public:
-    // Конструктор, принимающий курс обмена
+
     CurrencyConverter(double exchangeRate) : exchangeRate(exchangeRate) {}
 
-    // Функция для перевода рублей в доллары
     double rublesToDollars(double rubles) {
         return rubles / exchangeRate;
     }
-
-    // Функция для перевода долларов в рубли
     double dollarsToRubles(double dollars) {
         return dollars * exchangeRate;
     }
@@ -21,7 +18,7 @@ private:
 
 int main() {
     double exchangeRate;
-    std::cout << "Введите курс обмена (рубли за доллар): ";
+    std::cout << : ";
     std::cin >> exchangeRate;
 
     CurrencyConverter converter(exchangeRate);
