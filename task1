@@ -13,7 +13,7 @@ public:
     }
 
 private:
-    double exchangeRate; // Курс обмена рублей к долларам
+    double exchangeRate;
 };
 
 int main() {
